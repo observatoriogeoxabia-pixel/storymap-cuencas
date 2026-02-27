@@ -1,0 +1,25 @@
+{
+  "storymap": {
+    "slides": [
+      {
+        "type": "overview",
+        "text": {
+          "headline": "Cuencas hidrográficas",
+          "text": "Una lectura territorial desde el observatorio."
+        }
+      },
+      {
+        "type": "slide",
+        "text": {
+          "headline": "Primera cuenca",
+          "text": "Descripción territorial y ambiental."
+        },
+        "location": {
+          "lat": 40.0,
+          "lon": -3.7,
+          "zoom": 7
+        }
+      }
+    ]
+  }
+}
