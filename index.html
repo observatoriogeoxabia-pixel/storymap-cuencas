@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>StoryMap – Cuencas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://cdn.knightlab.com/libs/storymapjs/latest/css/storymap.css">
+  <script src="https://cdn.knightlab.com/libs/storymapjs/latest/js/storymap-min.js"></script>
+
+  <style>
+    html, body { height: 100%; margin: 0; }
+    #storymap { height: 100%; }
+  </style>
+</head>
+
+<body>
+  <div id="storymap"></div>
+
+  <script>
+    var storymap = new VCO.StoryMap('storymap', 'data/storymap.json');
+  </script>
+</body>
+</html>
