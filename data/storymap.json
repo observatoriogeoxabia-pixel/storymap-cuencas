@@ -12,50 +12,40 @@
       {
         "type": "slide",
         "text": {
-          "headline": "¿Qué es una cuenca hidrográfica?",
-          "text": "Una cuenca hidrográfica es el territorio delimitado por las divisorias de aguas, donde el relieve determina hacia dónde se desplaza el agua de lluvia. Por escorrentía superficial, barrancos y ríos, toda el agua acaba convergiendo hacia un mismo punto de salida."
+          "headline": "Comprobación",
+          "text": "Si estás viendo esto, el StoryMap carga y no hay error de lat/lon."
         },
-        "media": { "url": "media/diapo1.png" }
+        "location": { "lat": 38.789, "lon": 0.166, "zoom": 12 }
       },
       {
         "type": "slide",
-        "text": {
-          "headline": "Cuencas y subcuencas",
-          "text": "Una cuenca principal puede dividirse en subcuencas: unidades menores que organizan el drenaje local y explican por qué algunas zonas responden más rápido a la lluvia."
-        },
-        "media": { "url": "media/diapo11.png" }
+        "text": { "headline": "Cuenca del río Gorgos", "text": "Mapa con la cuenca y la red de ríos." },
+        "media": { "url": "maps/gorgos.html" },
+        "location": { "lat": 38.789, "lon": 0.166, "zoom": 12 }
       },
       {
         "type": "slide",
-        "text": { "headline": "Cuenca del río Gorgos", "text": "La cuenca principal del término municipal." },
-        "media": { "url": "maps/gorgos.html" }
+        "text": { "headline": "Cuenca de la Granadella", "text": "Mapa con la cuenca y la red de ríos." },
+        "media": { "url": "maps/granadella.html" },
+        "location": { "lat": 38.789, "lon": 0.166, "zoom": 12 }
       },
       {
         "type": "slide",
-        "text": { "headline": "Cuenca de la Granadella", "text": "Subcuenca litoral de respuesta rápida." },
-        "media": { "url": "maps/granadella.html" }
+        "text": { "headline": "Cuenca de Barranques", "text": "Mapa con la cuenca y la red de ríos." },
+        "media": { "url": "maps/barranques.html" },
+        "location": { "lat": 38.789, "lon": 0.166, "zoom": 12 }
       },
       {
         "type": "slide",
-        "text": { "headline": "Cuenca de Barranques", "text": "Drenaje condicionado por la urbanización." },
-        "media": { "url": "maps/barranques.html" }
+        "text": { "headline": "Cuenca de Covatelles", "text": "Mapa con la cuenca y la red de ríos." },
+        "media": { "url": "maps/covatelles.html" },
+        "location": { "lat": 38.789, "lon": 0.166, "zoom": 12 }
       },
       {
         "type": "slide",
-        "text": { "headline": "Cuenca de Covatelles", "text": "Subcuenca menor con escorrentías concentradas." },
-        "media": { "url": "maps/covatelles.html" }
-      },
-      {
-        "type": "slide",
-        "text": { "headline": "Intercuenca", "text": "Áreas sin drenaje claramente definido, clave para entender acumulaciones." },
-        "media": { "url": "maps/intercuenca.html" }
-      },
-      {
-        "type": "slide",
-        "text": {
-          "headline": "Lectura territorial",
-          "text": "Comprender estas unidades ayuda a interpretar inundaciones y la relación entre urbanismo e hidrología."
-        }
+        "text": { "headline": "Intercuenca", "text": "Mapa con la intercuenca y la red de ríos." },
+        "media": { "url": "maps/intercuenca.html" },
+        "location": { "lat": 38.789, "lon": 0.166, "zoom": 12 }
       }
     ]
   }
