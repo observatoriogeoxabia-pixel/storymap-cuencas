@@ -15,7 +15,7 @@
         "type": "slide",
         "text": {
           "headline": "Comprobación",
-          "text": "Si estás viendo esto, el JSON está bien y el StoryMap carga correctamente."
+          "text": "Si estás viendo esto, el JSON está bien y el StoryMap carga."
         }
       }
     ]
