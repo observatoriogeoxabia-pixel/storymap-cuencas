@@ -1,13 +1,13 @@
 {
-  "storymap": {
-    "slides": [
-      {
-        "type": "overview",
-        "text": {
-          "headline": "Las cuencas hidrográficas de Xàbia",
-          "text": "Una lectura territorial del drenaje natural, los barrancos y el riesgo de inundación."
-        }
-      },
+  "type": "overview",
+  "text": {
+    "headline": "Las Cuencas Hidrográficas de Xàbia",
+    "text": "Una lectura territorial del drenaje natural: cómo el relieve organiza el agua, los barrancos y el riesgo de inundación."
+  },
+  "media": {
+    "url": "media/portada.png"
+  }
+},
       {
         "type": "slide",
         "text": {
