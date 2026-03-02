@@ -4,20 +4,65 @@
       {
         "type": "overview",
         "text": {
-          "headline": "Cuencas hidrográficas",
-          "text": "Una lectura territorial desde el observatorio."
+          "headline": "Las cuencas hidrográficas de Xàbia",
+          "text": "Una lectura territorial del drenaje natural, los barrancos y el riesgo de inundación."
         }
       },
       {
         "type": "slide",
         "text": {
-          "headline": "Primera cuenca",
-          "text": "Descripción territorial y ambiental."
+          "headline": "La cuenca del río Gorgos",
+          "text": "Es la cuenca principal del término municipal y el eje estructurante del drenaje hacia el litoral."
         },
-        "location": {
-          "lat": 40.0,
-          "lon": -3.7,
-          "zoom": 7
+        "media": {
+          "url": "maps/gorgos.html"
+        }
+      },
+      {
+        "type": "slide",
+        "text": {
+          "headline": "La cuenca de la Granadella",
+          "text": "Una cuenca corta y torrencial, con pendientes acusadas y respuesta rápida a episodios de lluvia intensa."
+        },
+        "media": {
+          "url": "maps/granadella.html"
+        }
+      },
+      {
+        "type": "slide",
+        "text": {
+          "headline": "La cuenca de Barranques",
+          "text": "Sistema de drenaje difuso, muy condicionado por la urbanización y la red viaria."
+        },
+        "media": {
+          "url": "maps/barranques.html"
+        }
+      },
+      {
+        "type": "slide",
+        "text": {
+          "headline": "La cuenca de Covatelles",
+          "text": "Cuenca secundaria con episodios recurrentes de escorrentía concentrada."
+        },
+        "media": {
+          "url": "maps/covatelles.html"
+        }
+      },
+      {
+        "type": "slide",
+        "text": {
+          "headline": "Las zonas de intercuenca",
+          "text": "Áreas sin drenaje claramente definido, donde el riesgo se manifiesta de forma menos evidente."
+        },
+        "media": {
+          "url": "maps/intercuenca.html"
+        }
+      },
+      {
+        "type": "slide",
+        "text": {
+          "headline": "Una lectura territorial del riesgo",
+          "text": "Las cuencas no son solo unidades hidrológicas: son la base para entender las inundaciones y la relación entre urbanismo y agua."
         }
       }
     ]
