@@ -37,8 +37,8 @@
         <p>Subcuenca litoral de respuesta rápida a episodios intensos.</p>
       </section>
 
-      <section class="step" data-layer="barranques" data-title="Barranques">
-        <h2>Cuenca de Barranques</h2>
+      <section class="step" data-layer="barranqueres" data-title="Barranqueres">
+        <h2>Cuenca de Barranqueres</h2>
         <p>Drenaje condicionado por urbanización e infraestructuras.</p>
       </section>
 
@@ -47,9 +47,14 @@
         <p>Subcuenca menor pero relevante en escorrentías concentradas.</p>
       </section>
 
+      <section class="step" data-layer="plana" data-title="Plana">
+        <h2>Cuenca de la Plana</h2>
+        <p>Ámbito útil para explicar escorrentía difusa y la influencia de la topografía.</p>
+      </section>
+
       <section class="step" data-layer="intercuenca" data-title="Intercuenca">
         <h2>Intercuenca</h2>
-        <p>Áreas sin drenaje claramente definido. Riesgo “silencioso”.</p>
+        <p>Áreas sin drenaje claramente definido. Riesgo "silencioso".</p>
       </section>
     </div>
 
@@ -57,46 +62,37 @@
   </div>
 
   <script>
-    // Mapa base
     const map = L.map('map', { zoomControl: true, attributionControl: true }).setView([38.789, 0.166], 12);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18 }).addTo(map);
 
-    // Estilos (los que ya te gustan)
     const styleRios = { color:'#0077b6', weight:2 };
     const styleCuenca = { color:'#1d3557', weight:3, fillColor:'#457b9d', fillOpacity:0.4 };
 
-    // Cargar ríos una vez
     fetch('cuencas/rios.geojson')
       .then(r => r.json())
       .then(g => L.geoJSON(g, { style: styleRios }).addTo(map));
 
-    // Cargar cuencas (capas)
     const layers = {};
-    const cuencas = ['gorgos','granadella','barranques','covatelles','intercuenca'];
+    const cuencas = ['gorgos','granadella','barranqueres','covatelles','plana','intercuenca'];
 
     Promise.all(cuencas.map(n =>
       fetch(`cuencas/${n}.geojson`).then(r => r.json()).then(g => {
         layers[n] = L.geoJSON(g, { style: styleCuenca });
       })
     )).then(() => {
-      // Activar la primera
       activate('gorgos');
     });
 
     function activate(name){
-      // quitar todas
       Object.values(layers).forEach(l => { if(map.hasLayer(l)) map.removeLayer(l); });
-      // poner la activa
       const layer = layers[name];
       if(layer){
         layer.addTo(map);
         map.fitBounds(layer.getBounds(), { padding:[20,20] });
       }
-      // marcar active en texto
       document.querySelectorAll('.step').forEach(s => s.classList.toggle('active', s.dataset.layer === name));
     }
 
-    // Observador de scroll
     const obs = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if(e.isIntersecting){

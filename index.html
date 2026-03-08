@@ -2,23 +2,232 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>StoryMap – Cuencas</title>
+  <title>Cuencas Hidrográficas de Xàbia</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="https://cdn.knightlab.com/libs/storymapjs/latest/css/storymap.css">
-  <script src="https://cdn.knightlab.com/libs/storymapjs/latest/js/storymap-min.js"></script>
-
-  <style>
-    html, body { height: 100%; margin: 0; }
-    #storymap { height: 100%; }
-  </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
-
 <body>
-  <div id="storymap"></div>
+  <div class="app">
+    <div class="track" id="track">
+      <section class="slide" data-slide-type="intro">
+        <div class="slide-inner full-slide cover">
+          <div class="card">
+            <h1>Las cuencas hidrográficas de Xàbia</h1>
+            <p>Un recorrido visual por el río Gorgos y las cuencas hidrográficas que organizan el drenaje natural de Xàbia</p>
+          </div>
+          <div class="cover-logos">
+            <img src="media/ogx.png" alt="OGX">
+            <img src="media/flumen.png" alt="Flumen">
+          </div>
+        </div>
+      </section>
 
-  <script>
-    var storymap = new VCO.StoryMap('storymap', 'data/storymap.json');
-  </script>
+      <section class="slide" data-slide-type="intro">
+        <div class="slide-inner full-slide intro">
+          <div class="intro-split">
+            <article class="card intro-block">
+              <h3>¿Qué es una cuenca hidrográfica?</h3>
+              <p>Una cuenca hidrográfica es el territorio donde el agua de lluvia se recoge y se dirige hacia un cauce principal, normalmente un río, hasta llegar al mar.</p>
+              <p>Sus límites los marca el relieve: las zonas más elevadas, como crestas y montañas, separan el agua que fluye en direcciones distintas. A esos límites se les llama divisorias de aguas.</p>
+              <p>Dentro de la cuenca, el drenaje se organiza en una red de barrancos, arroyos y afluentes que convergen progresivamente en el río principal.</p>
+              <img src="media/cuenca.png" alt="Esquema de cuenca hidrográfica">
+            </article>
+            <article class="card intro-block">
+              <h3>¿Y una subcuenca?</h3>
+              <p>Dentro de una cuenca existen áreas más pequeñas llamadas subcuencas. Cada una canaliza la lluvia hacia un barranco o afluente concreto.</p>
+              <p>Estos cauces secundarios conducen el agua hacia el río principal y permiten entender cómo se organiza el drenaje a escala local.</p>
+              <p>En Xàbia, el relieve estructura este sistema mediante varias cuencas y subcuencas que dirigen las escorrentías hacia el río Gorgos y, finalmente, al mar.</p>
+              <img src="media/subcuenca.png" alt="Esquema de subcuencas hidrográficas">
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide-type="map" data-geojson="gorgos" data-focus="gorgos_overview">
+        <div class="slide-inner map-slide">
+          <div class="panel">
+            <div class="card">
+              <p class="eyebrow">Cuenca principal</p>
+              <h3>Cuenca del río Gorgos</h3>
+              <p>La cuenca del río Gorgos, también conocido como río Xaló, constituye uno de los principales sistemas de drenaje de la Marina Alta. Este río conecta las sierras del interior alicantino con el mar Mediterráneo, recogiendo el agua que desciende desde numerosos barrancos y relieves montañosos hasta su desembocadura en Xàbia.</p>
+              <p>Con una longitud aproximada de 53 kilómetros, el Gorgos sigue una dirección general oeste-este, atravesando el corredor natural del Vall de Pop, pasando por el entorno de Gata de Gorgos y alcanzando finalmente la llanura litoral antes de desembocar en el Mediterráneo.</p>
+              <p>A lo largo de su recorrido, el río organiza el drenaje de un amplio territorio formado por montañas, valles agrícolas y pequeñas subcuencas que aportan agua de forma intermitente. Este sistema de barrancos y cauces secundarios es fundamental para comprender cómo se concentra el agua en episodios de lluvias intensas.</p>
+              <p>Como ocurre con muchos ríos del clima mediterráneo, el Gorgos presenta un régimen irregular: durante largos periodos el cauce puede mostrar escaso caudal o incluso permanecer seco, pero tras lluvias intensas puede experimentar crecidas rápidas que movilizan grandes cantidades de agua y sedimentos hacia los tramos bajos de la cuenca.</p>
+              <p>Comprender el funcionamiento de esta cuenca permite entender cómo el relieve organiza el drenaje del territorio y por qué determinados lugares, especialmente en las zonas más bajas, son más sensibles a los episodios de inundación.</p>
+            </div>
+          </div>
+          <div class="map-stage"></div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide-type="map" data-geojson="gorgos" data-focus="gorgos_source">
+        <div class="slide-inner map-slide panel-right">
+          <div class="panel">
+            <div class="card">
+              <p class="eyebrow">Cabecera</p>
+              <h3>Nacimiento del río Gorgos</h3>
+              <p>El río Gorgos tiene su origen en las montañas del interior de Alicante, a unos 1.300 metros de altitud, en el entorno de las sierras de Alfaro y Serrella, dentro del término municipal de Fageca (comarca de El Comtat). Desde estas zonas montañosas comienza a organizarse el drenaje que acabará dirigiendo las aguas hacia la Marina Alta.</p>
+              <p>En sus primeras etapas no aparece todavía como un gran río. El sistema se forma a partir de pequeños barrancos de montaña que recogen el agua de lluvia y la canalizan hacia el cauce principal. Entre estos afluentes de cabecera destaca el barranc del Malafí, que nace en el entorno de Tollos y aporta parte del drenaje inicial al sistema.</p>
+              <p>Estas cabeceras presentan un comportamiento típico de los ríos mediterráneos. Durante largos periodos pueden permanecer prácticamente secos, pero tras episodios de lluvia intensa los barrancos se activan rápidamente, concentrando el agua que desciende desde las montañas.</p>
+            </div>
+          </div>
+          <div class="map-stage"></div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide-type="map" data-geojson="gorgos" data-focus="gorgos_valley">
+        <div class="slide-inner map-slide panel-right">
+          <div class="panel">
+            <div class="card">
+              <p class="eyebrow">Tramo medio</p>
+              <h3>La Vall de Pop</h3>
+              <p>En la Vall de Pop, el río Gorgos atraviesa un amplio valle agrícola que durante siglos ha estado ligado al aprovechamiento del agua. Cuando el río lleva caudal, este se ha utilizado tradicionalmente mediante pequeñas derivaciones, acequias y otras obras hidráulicas sencillas que permitían regar los cultivos del valle.</p>
+              <p>Sin embargo, el comportamiento del Gorgos refleja bien el carácter de los ríos mediterráneos y sus suelos calizos. En algunos tramos, el río permanece seco dejando al descubierto su lecho de gravas y sedimentos, mientras que pocos kilómetros más adelante el agua puede ser visible en el cauce.</p>
+              <p>La orografía de este sector es relativamente plana, lo que permite que el río, durante episodios de lluvias intensas, pueda desbordarse y ocupar parte de su llanura de inundación. Estos desbordamientos han ido depositando sedimentos a lo largo del tiempo, formando suelos fértiles que han favorecido el desarrollo de la agricultura.</p>
+              <p>En las zonas medias del valle predominan los cultivos tradicionales de secano, como almendros y olivares, mientras que en las zonas más bajas del Vall de Pop los viñedos ocupan buena parte de las parcelas agrícolas, configurando uno de los paisajes más característicos de este territorio.</p>
+            </div>
+          </div>
+          <div class="map-stage"></div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide-type="map" data-geojson="gorgos" data-focus="gorgos_to_gata">
+        <div class="slide-inner map-slide panel-right">
+          <div class="panel">
+            <div class="card">
+              <p class="eyebrow">Transición del cauce</p>
+              <h3>Recorrido hacia Gata de Gorgos</h3>
+              <p>Cuando el río Gorgos abandona el Vall de Pop, el paisaje comienza a transformarse. El amplio valle agrícola queda atrás y el cauce se adentra progresivamente en un entorno más montañoso, donde el río queda encajado entre relieves que estrechan su recorrido.</p>
+              <p>En este tramo, el Gorgos ha ido modelando pequeñas terrazas fluviales, formadas por sedimentos depositados durante antiguos episodios de crecida. Estas superficies ligeramente elevadas sobre el cauce han sido aprovechadas históricamente para el cultivo, creando pequeñas parcelas agrícolas que se adaptan al relieve del valle.</p>
+              <p>El río discurre aquí entre montañas, alternando tramos más abiertos con otros más encajados, mientras el paisaje combina zonas de vegetación natural con áreas agrícolas tradicionales. Este corredor natural guía el agua hacia el tramo final de la cuenca.</p>
+              <p>El recorrido continúa hasta alcanzar el entorno de Gata de Gorgos, donde el valle vuelve a abrirse progresivamente y el río se aproxima ya a la llanura litoral de Xàbia, la última etapa antes de su desembocadura en el Mediterráneo.</p>
+            </div>
+          </div>
+          <div class="map-stage"></div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide-type="map" data-geojson="barranqueres" data-focus="barranqueres_route">
+        <div class="slide-inner map-slide">
+          <div class="panel">
+            <div class="card">
+              <p class="eyebrow">Subcuenca</p>
+              <h3>Subcuenca de les Barranqueres</h3>
+              <p>La subcuenca de les Barranqueres recoge el agua que desciende desde la ladera sur del Montgó y la conduce hacia el tramo final del río Gorgos, en el entorno de Xàbia. Se trata de una red de drenaje formada por varios barrancos de corto recorrido que canalizan la escorrentía desde las zonas más elevadas hasta el fondo del valle.</p>
+              <p>El eje principal del sistema es el barranc de l’Hedra, que recibe el aporte de otros barrancos como el barranc del Migdia, el Runar, el Garroferet, el barranc de les Barranqueres o el barranc de les Valls. En conjunto, estos cauces recogen el agua procedente de las laderas del Montgó y la concentran en el tramo final de la subcuenca.</p>
+              <p>Esta es la subcuenca hidrográfica propia más extensa del término municipal de Xàbia, y constituye uno de los principales aportes de agua al Gorgos cuando las precipitaciones se concentran en la franja litoral y no afectan al interior de la cuenca.</p>
+              <p>Además, durante los primeros episodios de lluvias intensas tras el verano, y gracias también a los aportes procedentes de zonas húmedas y surgencias locales (aiguamolls), el sistema puede mantener presencia de agua superficial en los tramos más bajos durante varios meses, llegando en algunos años a persistir hasta bien entrada la primavera.</p>
+            </div>
+          </div>
+          <div class="map-stage"></div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide-type="map" data-geojson="covatelles">
+        <div class="slide-inner map-slide">
+          <div class="panel">
+            <div class="card">
+              <p class="eyebrow">Subcuenca</p>
+              <h3>Subcuenca del barranc de Covatelles</h3>
+              <p>La subcuenca del barranc de Covatelles recoge el agua que desciende desde las zonas elevadas situadas entre el Tossal Gros y la Serra de Benitatxell, organizando el drenaje de una parte importante del sector central del término municipal de Xàbia.</p>
+              <p>El sistema está formado por dos ejes principales de drenaje: el barranc de Covatelles, que constituye el cauce principal, y el barranc de Lluca, que aporta parte del drenaje desde las laderas de la Serra de Benitatxell. Ambos barrancos recogen el agua procedente de pequeños cauces secundarios y ramblas que se activan principalmente durante episodios de precipitación.</p>
+              <p>A lo largo de su recorrido, el barranco atraviesa zonas agrícolas tradicionales y áreas donde el paisaje se ha ido transformando con el paso del tiempo. En algunos tramos, el cauce natural resulta difícil de identificar, ya que queda difuminado dentro del parcelario agrícola o entre caminos y áreas residenciales, algo relativamente común en zonas de fondo de valle asociadas a ramblas cortas de carácter mediterráneo.</p>
+              <p>Estas áreas, además, presentan riesgo de inundación de carácter geomorfológico, tal y como recoge el PATRICOVA, debido a la escasa pendiente del terreno y a la concentración de los flujos durante episodios de lluvias intensas.</p>
+              <p>El drenaje de esta subcuenca termina incorporándose al río Gorgos en el entorno de la carretera de Benitatxell, aunque en la actualidad parte del flujo se encuentra canalizado o desviado artificialmente a través de infraestructuras y caminos, como el camí Pla d’en Roca, que conducen el agua hacia el cauce principal.</p>
+            </div>
+          </div>
+          <div class="map-stage"></div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide-type="map" data-geojson="gorgos" data-focus="gorgos_xabia">
+        <div class="slide-inner map-slide">
+          <div class="panel">
+            <div class="card">
+              <p class="eyebrow">Tramo final</p>
+              <h3>Tramo final del Gorgos</h3>
+              <p>El tramo final del Río Gorgos en Xàbia es el sector más llano de todo su recorrido, lo que favorece un trazado ligeramente meandriforme. En este tramo el río recibe aportes de diversos barrancos que actualmente se encuentran encauzados de forma subterránea, aunque sigue existiendo escorrentía superficial durante episodios de lluvia intensa.</p>
+              <p>Los tramos encauzados pueden generar efectos de estrangulamiento hidráulico aguas arriba o llegar a colapsar por taponamientos, incrementando el riesgo por reventones si no se eliminan los sedimentos de los tubos adecuadamente. Al mismo tiempo, este sector constituye una de las zonas más fértiles del llano debido a la acumulación histórica de sedimentos fluviales.</p>
+              <p>La desembocadura del río fue desviada tras una gran riada, situándose en su posición actual, donde la influencia marina permite que el agua del mar penetre río arriba. En este punto también se capta agua para la desaladora.</p>
+            </div>
+          </div>
+          <div class="map-stage"></div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide-type="map" data-geojson="plana">
+        <div class="slide-inner map-slide">
+          <div class="panel">
+            <div class="card">
+              <p class="eyebrow">Ámbito natural</p>
+              <h3>Cuenca de la Plana - Cap de Sant Antoni</h3>
+              <p>La subcuenca de la Plana – Cap de Sant Antoni presenta un sistema de drenaje diferente al de otras cuencas del municipio. La Plana es una superficie relativamente llana situada a 150 metros sobre el nivel del mar, donde el relieve se acorta en forma de acantilados hacia el litoral, siendo el final del Sistema Bético peninsular.</p>
+              <p>A pesar de esta topografía plana, el agua de lluvia se organiza en una red de pequeños barrancos que se encajan en el terreno buscando la salida natural hacia el mar. Estos cauces presentan recorridos cortos y solo transportan agua durante episodios de precipitaciones intensas, característicos del clima mediterráneo.</p>
+              <p>A diferencia de otras subcuencas del municipio que terminan aportando agua al río Gorgos, los barrancos de la Plana desembocan directamente en el mar, generalmente a través de los acantilados del Cap de Sant Antoni.</p>
+            </div>
+          </div>
+          <div class="map-stage"></div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide-type="map" data-geojson="intercuenca" data-focus="intercuenca_focus">
+        <div class="slide-inner map-slide">
+          <div class="panel">
+            <div class="card">
+              <h3>La intercuenca de la llanura de Xàbia</h3>
+              <p>Una intercuenca es un espacio situado entre varias cuencas hidrográficas donde el drenaje del agua no se organiza en torno a un único cauce principal. En estos territorios, el agua de lluvia puede circular de forma difusa a través de pequeños barrancos, ramblas o zonas deprimidas, sin seguir un único recorrido claramente definido.</p>
+              <p>En el caso de Xàbia, la intercuenca se sitúa principalmente en la llanura litoral, una zona relativamente plana donde confluyen aportes de agua procedentes de distintos sistemas cercanos, como el río Gorgos o algunos barrancos secundarios.</p>
+              <p>En este espacio el drenaje natural es más complejo que en las cuencas bien definidas. Parte del agua puede circular por pequeños cauces, mientras que otra se acumula temporalmente en zonas bajas o depresiones del terreno, como ocurre en el entorno del Saladar.</p>
+              <p>Además, el desarrollo urbano y la transformación del territorio han modificado en algunos puntos el funcionamiento natural del drenaje, canalizando o redirigiendo el agua a través de infraestructuras como el Canal de la Fontana, que actúa como vía de evacuación hacia el mar.</p>
+              <p>Debido a la escasa pendiente del terreno y a la concentración de aportes procedentes de diferentes sistemas, la intercuenca constituye uno de los espacios más sensibles a los episodios de inundación dentro del término municipal de Xàbia.</p>
+            </div>
+          </div>
+          <div class="map-stage"></div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide-type="map" data-geojson="granadella" data-focus="granadella_martorell">
+        <div class="slide-inner map-slide">
+          <div class="panel">
+            <div class="card">
+              <p class="eyebrow">Cuenca litoral</p>
+              <h3>Cuenca de la Granadella</h3>
+              <p>La subcuenca de la Granadella recoge el agua que desciende desde los relieves situados entre la Serra de Benitatxell y el entorno de la cala de la Granadella, organizando el drenaje hacia el Mediterráneo.</p>
+              <p>El sistema está formado por varios barrancos de corto recorrido que canalizan la escorrentía procedente de las zonas más elevadas. Entre ellos destacan el barranc de l’Orxella, el barranc de Martorell y el barranc de la Granadella, que confluyen progresivamente antes de alcanzar el tramo final de la cala.</p>
+              <p>Las cabeceras de estos barrancos se sitúan aproximadamente en cotas cercanas a los 200 metros de altitud, lo que genera pendientes relativamente acusadas y favorece una respuesta rápida del sistema ante episodios de lluvias intensas. Como ocurre en muchas cuencas mediterráneas de corto recorrido, los cauces permanecen secos durante gran parte del año y solo transportan agua cuando se producen precipitaciones intensas.</p>
+              <p>A diferencia de las subcuencas que terminan aportando agua al río Gorgos, el drenaje de la Granadella se dirige directamente hacia el mar, desembocando en la cala tras recorrer valles encajados entre relieves montañosos con fallas geológicas.</p>
+              <p>El paisaje de la cuenca combina zonas forestales de pinar mediterráneo, espacios naturales bien conservados y algunas áreas transformadas por urbanizaciones residenciales que se desarrollaron principalmente a partir de la segunda mitad del siglo XX.</p>
+            </div>
+          </div>
+          <div class="map-stage"></div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide-type="map" data-focus="summary_cuencas">
+        <div class="slide-inner summary-slide">
+          <div class="summary-overlay">
+            <p>El territorio de Xàbia está formado por un conjunto de cuencas y subcuencas que organizan el drenaje natural del agua desde las montañas hasta el mar.</p>
+            <p>Este mapa reúne todos los sistemas que hemos recorrido, si quieres volver a explorar alguna de las subcuencas, puedes seleccionarla nuevamente en el mapa.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="shared-map-shell" id="sharedMapShell">
+      <div class="shared-map" id="sharedMap"></div>
+    </div>
+
+    <div class="controls">
+      <button type="button" id="prevBtn">Anterior</button>
+      <div class="status" id="status">1 / 8</div>
+      <button type="button" id="nextBtn">Siguiente</button>
+      <a id="finishBtn" href="https://observatoriogeoxabia.es/projecte-flumen/" target="_blank" rel="noopener noreferrer">Finalizar</a>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>

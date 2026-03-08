@@ -5,45 +5,69 @@
         "type": "overview",
         "text": {
           "headline": "Las Cuencas Hidrográficas de Xàbia",
-          "text": "Una lectura territorial del drenaje natural: cómo el relieve organiza el agua, los barrancos y el riesgo de inundación."
+          "text": "Un recorrido territorial para entender cómo el relieve organiza la escorrentía, los barrancos y los puntos sensibles ante episodios de lluvia intensa."
         },
         "media": { "url": "media/portada.png" }
       },
       {
         "type": "slide",
         "text": {
-          "headline": "Comprobación",
-          "text": "Si estás viendo esto, el StoryMap carga y no hay error de lat/lon."
+          "headline": "¿Qué es una cuenca hidrográfica?",
+          "text": "Una cuenca hidrográfica es el espacio donde el agua de lluvia drena hacia un mismo cauce o salida. En Xàbia, su lectura ayuda a explicar la relación entre relieve, barrancos, urbanización y riesgo de inundación."
         },
         "location": { "lat": 38.789, "lon": 0.166, "zoom": 12 }
       },
       {
         "type": "slide",
-        "text": { "headline": "Cuenca del río Gorgos", "text": "Mapa con la cuenca y la red de ríos." },
+        "text": {
+          "headline": "Cuenca del río Gorgos",
+          "text": "Aquí puedes explicar el eje principal de drenaje del municipio y los puntos clave asociados a su comportamiento hidrológico."
+        },
         "media": { "url": "maps/gorgos.html" },
         "location": { "lat": 38.789, "lon": 0.166, "zoom": 12 }
       },
       {
         "type": "slide",
-        "text": { "headline": "Cuenca de la Granadella", "text": "Mapa con la cuenca y la red de ríos." },
+        "text": {
+          "headline": "Cuenca de la Granadella",
+          "text": "Cuenca litoral de respuesta rápida, útil para explicar pendiente, escorrentía concentrada y salida hacia la costa."
+        },
         "media": { "url": "maps/granadella.html" },
         "location": { "lat": 38.789, "lon": 0.166, "zoom": 12 }
       },
       {
         "type": "slide",
-        "text": { "headline": "Cuenca de Barranques", "text": "Mapa con la cuenca y la red de ríos." },
-        "media": { "url": "maps/barranques.html" },
+        "text": {
+          "headline": "Cuenca de Barranqueres",
+          "text": "En esta cuenca puedes centrarte en la relación entre barrancos, ocupación urbana e infraestructuras."
+        },
+        "media": { "url": "maps/barranqueres.html" },
         "location": { "lat": 38.789, "lon": 0.166, "zoom": 12 }
       },
       {
         "type": "slide",
-        "text": { "headline": "Cuenca de Covatelles", "text": "Mapa con la cuenca y la red de ríos." },
+        "text": {
+          "headline": "Cuenca de Covatelles",
+          "text": "Un ámbito más local para explicar procesos de escorrentía concentrada y puntos sensibles del territorio."
+        },
         "media": { "url": "maps/covatelles.html" },
         "location": { "lat": 38.789, "lon": 0.166, "zoom": 12 }
       },
       {
         "type": "slide",
-        "text": { "headline": "Intercuenca", "text": "Mapa con la intercuenca y la red de ríos." },
+        "text": {
+          "headline": "Cuenca de la Plana",
+          "text": "Aquí puedes introducir la dinámica hídrica ligada a la topografía y a la escorrentía más difusa."
+        },
+        "media": { "url": "maps/plana.html" },
+        "location": { "lat": 38.789, "lon": 0.166, "zoom": 12 }
+      },
+      {
+        "type": "slide",
+        "text": {
+          "headline": "Intercuenca",
+          "text": "Las áreas intercuenca permiten explicar escorrentías dispersas y acumulaciones locales fuera de un cauce principal."
+        },
         "media": { "url": "maps/intercuenca.html" },
         "location": { "lat": 38.789, "lon": 0.166, "zoom": 12 }
       }
